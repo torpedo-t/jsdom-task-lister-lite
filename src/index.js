@@ -3,12 +3,15 @@ const tasks = document.findElementById("tasks")
 const form = document.getElementById('create-task-form')
 
 function logSubmit(event) {
-  tasks.textContent = `${textField.textContent}`
   event.preventDefault();
+  let newTask = textField.value
+  let taskItem = document.createElement("li");
+  taskItem.innerHTML = newTask
+  tasks.appendChild(newTask);
+  form.reset()
 }
 
 form.addEventListener("submit", logSubmit);
 
-document.addEventListener("DOMContentLoaded", function(event) {
-  logSubmit(event)
+document.addEventListener("DOMContentLoaded", function() {
 });
