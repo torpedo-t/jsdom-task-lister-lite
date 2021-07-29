@@ -14,5 +14,7 @@ taskForm.addEventListener("submit", function(event){
   taskForm.reset()
 });
 
+// a delete function that will remove tasks from your list
+
 
 
