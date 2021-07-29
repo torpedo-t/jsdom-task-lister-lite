@@ -1,17 +1,17 @@
-const textField = document.findElementById("new-task-description")
-const tasks = document.findElementById("tasks")
-const form = document.getElementById('create-task-form')
-
-function logSubmit(event) {
-  event.preventDefault();
-  let newTask = textField.value
-  let taskItem = document.createElement("li");
-  taskItem.innerHTML = newTask
-  tasks.appendChild(newTask);
-  form.reset()
-}
-
-form.addEventListener("submit", logSubmit);
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
 });
+
+const taskList = document.querySelector("#tasks")
+const taskForm = document.querySelector('#create-task-form')
+
+taskForm.addEventListener("submit", function(event){
+  event.preventDefault()
+  let newTask = document.querySelector("#new-task-description").value
+  let taskItem = document.createElement("li");
+  taskItem.innerText = newTask
+  // when we appendchild we append an HTML element
+  taskList.appendChild(taskItem)
+  taskForm.reset()
+});
+
+
