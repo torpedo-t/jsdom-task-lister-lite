@@ -9,6 +9,6 @@ function logSubmit(event) {
 
 form.addEventListener("submit", logSubmit);
 
-document.addEventListener("DOMContentLoaded", function() {
-  logSubmit()
+document.addEventListener("DOMContentLoaded", function(event) {
+  logSubmit(event)
 });
